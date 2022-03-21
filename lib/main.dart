@@ -4,18 +4,20 @@ import 'package:flutter_awesome/app/app.dart';
 import 'package:flutter_awesome/example/index.dart';
 import 'package:flutter_awesome/example/provider/hello_provider/hello_provider_main.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   static const appTitle = 'Flutter Awesome';
+  final _scaffoldMessageKey = GlobalKey<ScaffoldMessengerState>();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: appTitle,
       debugShowCheckedModeBanner: false,
+      scaffoldMessengerKey: _scaffoldMessageKey,
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
